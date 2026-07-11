@@ -266,7 +266,7 @@ document.getElementById("cakePage")
 else{
 
     document.getElementById("photoSection").style.display="block";
-    startSlideshow();
+showDailyPhoto();
 
 }
 
