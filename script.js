@@ -35,6 +35,22 @@ document.getElementById("home").style.display="block";
 
 }
 
+// 📅 Date Helpers
+
+function todayOnly() {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+}
+
+function getDaysLeft() {
+
+    const birthday = new Date(2026, 7, 8); // August = 7
+    birthday.setHours(0, 0, 0, 0);
+
+    return Math.round((birthday - todayOnly()) / 86400000);
+
+}
 
 
 // ⏳ COUNTDOWN TO 8 AUGUST
@@ -192,47 +208,7 @@ let messages=[
 
 // 💌 DAILY LOVE MESSAGE
 
-const birthdayDate = new Date(2026, 7, 8); // August 8, 2026
-const today = new Date();
 
-function getDaysLeft(){
-
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    const birthdayDate = new Date(2026,7,8);
-    birthdayDate.setHours(0,0,0,0);
-
-    return Math.round((birthdayDate - today)/86400000);
-
-}
-
-const daysLeft = getDaysLeft();
-
-console.log("Today's Date:", new Date());
-console.log("Days Left:", daysLeft);
-
-const dailyMessage = document.getElementById("dailyMessage");
-
-if (dailyMessage) {
-
-    if (daysLeft >= 1 && daysLeft <= 30) {
-
-        dailyMessage.innerHTML = messages[30 - daysLeft];
-
-    } else if (daysLeft === 0) {
-
-        dailyMessage.innerHTML = `
-        🎂 Happy Birthday Vishal ❤️
-        <br><br>
-        Today is your day.
-        <br><br>
-        Open your gift. 💌
-        `;
-
-    }
-
-}
 
 // 🎁 GIFT OPEN
 
