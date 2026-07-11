@@ -206,7 +206,36 @@ let messages=[
 ];
 
 
-// 💌 DAILY LOVE MESSAGE
+// ❤️ DAILY MESSAGE
+
+const daysLeft = getDaysLeft();
+
+console.log("Today's Date:", todayOnly());
+console.log("Days Left:", daysLeft);
+
+const dailyMessage = document.getElementById("dailyMessage");
+
+if (dailyMessage) {
+
+    if (daysLeft >= 1 && daysLeft <= 30) {
+
+        dailyMessage.innerHTML = messages[30 - daysLeft];
+
+    }
+
+    else if (daysLeft === 0) {
+
+        dailyMessage.innerHTML = `
+        🎂 Happy Birthday Vishal ❤️
+        <br><br>
+        Today is finally here.
+        <br><br>
+        Open your gift. 💌
+        `;
+
+    }
+
+}
 
 
 
@@ -223,13 +252,9 @@ document.getElementById("home")
 .style.display="none";
 
 
+const daysLeft = getDaysLeft();
 
-
-let today = new Date();
-
-
-
-if(today >= birthdayDate){
+if(daysLeft <= 0){
 
 // 🎂 Birthday day cake first
 
