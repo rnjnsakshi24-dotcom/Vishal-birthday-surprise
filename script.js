@@ -386,25 +386,9 @@ document.getElementById("birthdayLetter")
 
 document.getElementById("birthdayLetterText").innerHTML = `
 
-const text="Happy Birthday Sukhija Ji ❤️";
 
-let i=0;
 
-const typing=setInterval(function(){
-
-document.getElementById("typingTitle").innerHTML+=text.charAt(i);
-
-i++;
-
-if(i>=text.length){
-
-clearInterval(typing);
-
-}
-
-},80);
-
-<h2 id="typingTitle"></h2>
+<h2>Happy Birthday Sukhija Ji ❤️</h2>
 <p>
 
 Dear Vishal,
@@ -650,21 +634,23 @@ const captions=[
 ];
 // ❤️ Automatic Slideshow
 
+
 let currentSlide = 0;
+let slideInterval;
 
-const slides = document.querySelectorAll(".slide");
+function startSlideshow(){
 
-if(slides.length){
+const slides=document.querySelectorAll(".slide");
 
-setInterval(function(){
+slideInterval=setInterval(function(){
 
 slides[currentSlide].classList.remove("active");
 
 currentSlide++;
 
-if(currentSlide >= slides.length){
+if(currentSlide>=slides.length){
 
-currentSlide = 0;
+currentSlide=0;
 
 }
 
