@@ -94,16 +94,25 @@ if (distance < 0) {
 
 clearInterval(countdown);
 
-    document.getElementById("countdown").innerHTML =
-    "🎉 Happy Birthday Vishal! ❤️";
+    const countdownElement = document.getElementById("countdown");
+
+if (countdownElement) {
+    countdownElement.innerHTML = "🎉 Happy Birthday Vishal! ❤️";
+}
 
 } else {
 
-    document.getElementById("countdown").innerHTML =
-    days + " Days ❤️ " +
-    hours + " Hours " +
-    minutes + " Minutes " +
-    seconds + " Seconds";
+  const countdownElement = document.getElementById("countdown");
+
+if (countdownElement) {
+
+    countdownElement.innerHTML =
+        days + " Days ❤️ " +
+        hours + " Hours " +
+        minutes + " Minutes " +
+        seconds + " Seconds";
+
+}
 
 }
 
