@@ -186,12 +186,17 @@ let messages=[
 const birthdayDate = new Date(2026, 7, 8); // August 8, 2026
 const today = new Date();
 
-// Remove time part
-birthdayDate.setHours(0,0,0,0);
-today.setHours(0,0,0,0);
+function getDaysLeft(){
 
-// Calculate days left
-const daysLeft = Math.round((birthdayDate - today) / 86400000);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const birthdayDate = new Date(2026,7,8);
+    birthdayDate.setHours(0,0,0,0);
+
+    return Math.round((birthdayDate - today)/86400000);
+
+}
 
 console.log("Today's Date:", today);
 console.log("Days Left:", daysLeft);
