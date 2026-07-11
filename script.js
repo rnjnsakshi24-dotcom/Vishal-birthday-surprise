@@ -198,24 +198,30 @@ function getDaysLeft(){
 
 }
 
-console.log("Today's Date:", today);
+const daysLeft = getDaysLeft();
+
+console.log("Today's Date:", new Date());
 console.log("Days Left:", daysLeft);
 
-if (daysLeft >= 1 && daysLeft <= 30) {
+const dailyMessage = document.getElementById("dailyMessage");
 
-    document.getElementById("dailyMessage").innerHTML =
-        messages[30 - daysLeft];
+if (dailyMessage) {
 
-}
-else if (daysLeft === 0) {
+    if (daysLeft >= 1 && daysLeft <= 30) {
 
-    document.getElementById("dailyMessage").innerHTML = `
+        dailyMessage.innerHTML = messages[30 - daysLeft];
+
+    } else if (daysLeft === 0) {
+
+        dailyMessage.innerHTML = `
         🎂 Happy Birthday Vishal ❤️
         <br><br>
         Today is your day.
         <br><br>
         Open your gift. 💌
-    `;
+        `;
+
+    }
 
 }
 
