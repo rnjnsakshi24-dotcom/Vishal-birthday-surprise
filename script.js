@@ -682,35 +682,32 @@ slides[currentSlide].classList.add("active");
 }
 
 // 📸 Slideshow
+// 📸 Daily Photo
 
-let currentSlide = 0;
+function showDailyPhoto() {
 
-function startSlideshow(){
+    const photo = document.getElementById("dailyPhoto");
+    const caption = document.getElementById("photoCaption");
 
-const slides = document.querySelectorAll(".slide");
+    if (!photo || !caption) return;
 
-if(slides.length==0) return;
+    const birthday = new Date(2026, 7, 8);
+    birthday.setHours(0,0,0,0);
 
-slides.forEach(slide=>{
-slide.classList.remove("active");
-});
+    const today = new Date();
+    today.setHours(0,0,0,0);
 
-slides[currentSlide].classList.add("active");
+    const daysLeft = Math.round((birthday - today) / 86400000);
 
-setInterval(()=>{
+    // 30 days before birthday → photo1
+    let index = 30 - daysLeft;
 
-slides[currentSlide].classList.remove("active");
+    if(index < 0) index = 0;
 
-currentSlide++;
+    if(index >= photos.length)
+        index = photos.length - 1;
 
-if(currentSlide>=slides.length){
-
-currentSlide=0;
-
-}
-
-slides[currentSlide].classList.add("active");
-
-},4000);
+    photo.src = photos[index];
+    caption.innerHTML = captions[index];
 
 }
