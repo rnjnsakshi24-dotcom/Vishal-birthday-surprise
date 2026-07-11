@@ -653,33 +653,6 @@ const captions=[
 "Ready for the biggest surprise? 🎁"
 
 ];
-// ❤️ Automatic Slideshow
-
-
-let currentSlide = 0;
-let slideInterval;
-
-function startSlideshow(){
-
-const slides=document.querySelectorAll(".slide");
-
-slideInterval=setInterval(function(){
-
-slides[currentSlide].classList.remove("active");
-
-currentSlide++;
-
-if(currentSlide>=slides.length){
-
-currentSlide=0;
-
-}
-
-slides[currentSlide].classList.add("active");
-
-},3000);
-
-}
 
 // 📸 Slideshow
 // 📸 Daily Photo
