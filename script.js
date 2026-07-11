@@ -648,3 +648,28 @@ const captions=[
 "Ready for the biggest surprise? 🎁"
 
 ];
+// ❤️ Automatic Slideshow
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+if(slides.length){
+
+setInterval(function(){
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+
+currentSlide = 0;
+
+}
+
+slides[currentSlide].classList.add("active");
+
+},3000);
+
+}
