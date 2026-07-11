@@ -680,3 +680,37 @@ slides[currentSlide].classList.add("active");
 },3000);
 
 }
+
+// 📸 Slideshow
+
+let currentSlide = 0;
+
+function startSlideshow(){
+
+const slides = document.querySelectorAll(".slide");
+
+if(slides.length==0) return;
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[currentSlide].classList.add("active");
+
+setInterval(()=>{
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide>=slides.length){
+
+currentSlide=0;
+
+}
+
+slides[currentSlide].classList.add("active");
+
+},4000);
+
+}
